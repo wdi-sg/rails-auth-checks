@@ -1,0 +1,2699 @@
+Started GET "//songs/1/genres" for 127.0.0.1 at 2018-04-17 01:35:04 +0800
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "part2_development" does not exist
+):
+  
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:688:in `rescue in connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:684:in `connect'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:215:in `initialize'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `new'
+activerecord (5.2.0) lib/active_record/connection_adapters/postgresql_adapter.rb:40:in `postgresql_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:809:in `new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:832:in `try_to_checkout_new_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:793:in `acquire_connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:521:in `checkout'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:380:in `connection'
+activerecord (5.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:1008:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.0) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.0) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (529.4ms)[0m  [1m[35mCREATE DATABASE "part2_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (383.0ms)[0m  [1m[35mCREATE DATABASE "part2_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (23.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (23.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7921730232219302100)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20180416171900)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (27.6ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180416171900_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180416171900"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateSongs (20180416171917)
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180416171917_create_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180416171917"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGenresSongs (20180416172035)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "genres_songs" ("id" bigserial primary key, "genre_id" bigint, "song_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_654b246747"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+, CONSTRAINT "fk_rails_ceae29fbfc"
+FOREIGN KEY ("song_id")
+  REFERENCES "songs" ("id")
+)[0m
+  ↳ db/migrate/20180416172035_create_genres_songs.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_genres_songs_on_genre_id" ON "genres_songs"  ("genre_id")[0m
+  ↳ db/migrate/20180416172035_create_genres_songs.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_genres_songs_on_song_id" ON "genres_songs"  ("song_id")[0m
+  ↳ db/migrate/20180416172035_create_genres_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180416172035"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-16 17:36:27.853874"], ["updated_at", "2018-04-16 17:36:27.853874"]]
+  ↳ bin/rails:9
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(7921730232219302100)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "ballad"], ["description", "slow and nice"], ["created_at", "2018-04-16 17:39:38.186538"], ["updated_at", "2018-04-16 17:39:38.186538"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Create (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "burning"], ["created_at", "2018-04-16 17:40:15.624576"], ["updated_at", "2018-04-16 17:40:15.624576"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre::HABTM_Songs Create (2.6ms)[0m  [1m[32mINSERT INTO "genres_songs" ("genre_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["genre_id", 1], ["song_id", 1], ["created_at", "2018-04-16 17:40:58.891582"], ["updated_at", "2018-04-16 17:40:58.891582"]]
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" INNER JOIN "genres_songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres_songs"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "country"], ["description", "nothing special"], ["created_at", "2018-04-16 17:42:18.194918"], ["updated_at", "2018-04-16 17:42:18.194918"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "rock"], ["description", "heavy guitar playing"], ["created_at", "2018-04-16 17:43:27.148173"], ["updated_at", "2018-04-16 17:43:27.148173"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre::HABTM_Songs Create (1.0ms)[0m  [1m[32mINSERT INTO "genres_songs" ("genre_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["genre_id", 2], ["song_id", 1], ["created_at", "2018-04-16 17:44:51.497631"], ["updated_at", "2018-04-16 17:44:51.497631"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" INNER JOIN "genres_songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres_songs"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 2], ["LIMIT", 11]]
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre::HABTM_Songs Create (1.1ms)[0m  [1m[32mINSERT INTO "genres_songs" ("genre_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["genre_id", 3], ["song_id", 1], ["created_at", "2018-04-16 17:45:19.174373"], ["updated_at", "2018-04-16 17:45:19.174373"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" INNER JOIN "genres_songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres_songs"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 3], ["LIMIT", 11]]
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:46:12 +0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:55:16 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[36mGenre Load (8.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."song_id" = $1 LIMIT $2[0m  [["song_id", "1"], ["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 149ms (ActiveRecord: 5.3ms)
+
+
+  
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."song_id" = $1 LIMIT $2[0m  [["song_id", "1"], ["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `plain' for #<GenresController:0x00007f9392666020>):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:56:04 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."song_id" = $1 LIMIT $2[0m  [["song_id", "1"], ["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 2.8ms)
+
+
+  
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."song_id" = $1 LIMIT $2[0m  [["song_id", "1"], ["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `plain' for #<GenresController:0x00007f939172a728>):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:56:32 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 13ms (Views: 1.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:56:43 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."song_id" = $1[0m  [["song_id", "1"]]
+  ↳ app/controllers/genres_controller.rb:5
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 11.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column genres.song_id does not exist
+LINE 1: ... ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."...
+                                                             ^
+: SELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."song_id" = $1):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:57:47 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:59:29 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:59:31 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 01:59:45 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."song_id" = $1[0m  [["song_id", "1"]]
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 15.9ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column genres.song_id does not exist
+LINE 1: ... ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."...
+                                                             ^
+: SELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs"."song_id" WHERE "genres"."song_id" = $1):
+    1: <h1>List of genres </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb___3286931644206307731_70135900221320'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:00:30 +0800
+  
+SyntaxError (/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected tSYMBEG, expecting '('
+...ns(:songs).where(genres_songs.:song_id => params[:song_id])
+...                               ^
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/genres_controller.rb:4: syntax error, unexpected tSYMBEG, expecting '('
+app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:01:19 +0800
+  
+SyntaxError (/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected tSYMBEG, expecting '('
+...res_songs).where(genres_songs.:song_id => params[:song_id])
+...                               ^
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/genres_controller.rb:4: syntax error, unexpected tSYMBEG, expecting '('
+app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:02:04 +0800
+  
+SyntaxError (/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected '[', expecting '('
+...res_songs).where(genres_songs.[:song_id] => params[:song_id])
+...                               ^
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/genres_controller.rb:4: syntax error, unexpected '[', expecting '('
+app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:03:44 +0800
+  
+SyntaxError (/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected '[', expecting '('
+...(:genres_songs).where(song_id.[:song_id] => params[:song_id])
+...                               ^
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/genres_controller.rb:4: syntax error, unexpected '[', expecting '('
+app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:03:57 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE "genres"."song_id" = $1[0m  [["song_id", "1"]]
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 8.1ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column genres.song_id does not exist
+LINE 1: ...N "genres_songs"."genre_id" = "genres"."id" WHERE "genres"."...
+                                                             ^
+: SELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE "genres"."song_id" = $1):
+    1: <h1>List of genres </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb___3286931644206307731_70135899467940'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:05:01 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+LoadError (Unable to autoload constant Genres_songs, expected /Users/wenhao/wdi/week8/sortify-rails/part2/app/models/genres_songs.rb to define it):
+  
+app/controllers/genres_controller.rb:4:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:05:20 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE "genres"."song_id" = $1[0m  [["song_id", "1"]]
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 9.1ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column genres.song_id does not exist
+LINE 1: ...N "genres_songs"."genre_id" = "genres"."id" WHERE "genres"."...
+                                                             ^
+: SELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE "genres"."song_id" = $1):
+    1: <h1>List of genres </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb___3286931644206307731_70135928408420'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:07:40 +0800
+  
+SyntaxError (/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected tSYMBEG, expecting '('
+...s_songs).where("genres_songs".:song_id => params[:song_id])
+...                               ^
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+/Users/wenhao/wdi/week8/sortify-rails/part2/app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/genres_controller.rb:4: syntax error, unexpected tSYMBEG, expecting '('
+app/controllers/genres_controller.rb:4: syntax error, unexpected ')', expecting keyword_end
+app/controllers/genres_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:09:36 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 882ms (Views: 866.5ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:10:05 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 65ms (Views: 41.3ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:10:55 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1')) LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendered genres/index.html.erb within layouts/application (359.2ms)
+Completed 500 Internal Server Error in 371ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `genre' for #<#<Class:0x00007f9395c4b7f8>:0x00007f93961295b8>
+Did you mean?  genre_url
+               @genres):
+    1: <h1>List of genres for song <%= genre.songs.name %> </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135927362100'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:11:05 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs' for nil:NilClass):
+    1: <h1>List of genres for song <%= @genre.songs.name %> </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135901238360'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:11:12 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>List of genres for song <%= @genre.song.name %> </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135900220540'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:11:20 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>List of genres for song <%= @genre.name %> </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135946775360'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:11:41 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>List of genres for song <%= @genre.name %> </h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135895961780'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:11:49 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 74ms (Views: 60.1ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:12:37 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:13:46 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 18ms (Views: 1.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:15:14 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 32ms (Views: 2.2ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:17:59 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id"[0m
+  ↳ app/controllers/genres_controller.rb:4
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 8.1ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into String):
+  
+app/controllers/genres_controller.rb:4:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:18:18 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" INNER JOIN "genres_songs" "genres_songs_genres_join" ON "genres_songs_genres_join"."genre_id" = "genres"."id" INNER JOIN "songs" ON "songs"."id" = "genres_songs_genres_join"."song_id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 67ms (Views: 43.5ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:20:01 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `join' for #<Class:0x00007f939804b838>
+Did you mean?  joins):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:20:07 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.1ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:20:55 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.1ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:21:23 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant GenresController::Songs):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:21:31 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:22:43 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+  
+app/controllers/genres_controller.rb:6:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:22:59 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 56ms (Views: 35.4ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:23:24 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.7ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:23:30 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 57ms (Views: 36.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:23:47 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 42ms (Views: 37.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:24:01 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>List of genres for song <%= @song[0].name %></h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135924944660'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:26:01 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant GenresController::Songs):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:26:11 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>List of genres for song <%= @song[0].name %></h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135954996500'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:28:46 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=1'[0m
+  ↳ app/controllers/genres_controller.rb:5
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  unterminated quoted string at or near "'"
+LINE 1: ...s_songs on songs.id = genres_songs.song_id WHERE songs.id=1'
+                                                                      ^
+: SELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=1'):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:29:04 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=1[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for {"name"=>"burning"}:Hash):
+    1: <h1>List of genres for song <%= @song[0].name %></h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135946380960'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:29:13 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=1[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<ActiveRecord::Result:0x00007f93917f2728>):
+    1: <h1>List of genres for song <%= @song.name %></h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135888923980'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:29:30 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=1[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for {"name"=>"burning"}:Hash):
+    1: <h1>List of genres for song <%= @song[0].name %></h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___3286931644206307731_70135946965200'
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:30:44 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=1[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.1ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 53ms (Views: 40.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/songs/1/genres" for 127.0.0.1 at 2018-04-17 02:31:07 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"1"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=1[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('1'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 34.0ms | ActiveRecord: 1.5ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE DATABASE "part2_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "part2_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (24.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7921730232219302100)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20180416171900)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180416171900_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180416171900"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateSongs (20180416171917)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180416171917_create_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180416171917"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateGenresSongs (20180416172035)
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE "genres_songs" ("id" bigserial primary key, "genre_id" bigint, "song_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_654b246747"
+FOREIGN KEY ("genre_id")
+  REFERENCES "genres" ("id")
+, CONSTRAINT "fk_rails_ceae29fbfc"
+FOREIGN KEY ("song_id")
+  REFERENCES "songs" ("id")
+)[0m
+  ↳ db/migrate/20180416172035_create_genres_songs.rb:3
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_genres_songs_on_genre_id" ON "genres_songs"  ("genre_id")[0m
+  ↳ db/migrate/20180416172035_create_genres_songs.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_genres_songs_on_song_id" ON "genres_songs"  ("song_id")[0m
+  ↳ db/migrate/20180416172035_create_genres_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180416172035"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20180417073724)
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180417073724_devise_create_users.rb:5
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20180417073724_devise_create_users.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20180417073724_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180417073724"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddUserToSongs (20180417073740)
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "songs" ADD "user_id" bigint[0m
+  ↳ db/migrate/20180417073740_add_user_to_songs.rb:3
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE  INDEX  "index_songs_on_user_id" ON "songs"  ("user_id")[0m
+  ↳ db/migrate/20180417073740_add_user_to_songs.rb:3
+  [1m[35m (4.9ms)[0m  [1m[35mALTER TABLE "songs" ADD CONSTRAINT "fk_rails_d36a8dd57d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/migrate/20180417073740_add_user_to_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180417073740"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-17 07:37:46.940230"], ["updated_at", "2018-04-17 07:37:46.940230"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(7921730232219302100)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:49:49 +0800
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/railties-5.2.0/lib/rails/templates/rails/welcome/index.html.erb (19.5ms)
+Completed 200 OK in 52ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:50:49 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  Rendered songs/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 417ms (Views: 397.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 15:50:54 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 127ms (Views: 97.0ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-17 15:50:58 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 53ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-17 15:51:14 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CHBFKkhIhPHSWfY3F5RfxvYF6txTC/peeFOzwg/wwz2A0XrN2di1o7S52ILEBXsaiObF/kc6MVTVBZDJMk4AyA==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "abc@gmail.com"], ["encrypted_password", "$2a$11$/.zMxXGl8DmqN60SntG4FejSITc/IFShFbCV0irCMaCjHhyCnhT1u"], ["created_at", "2018-04-17 07:51:14.627640"], ["updated_at", "2018-04-17 07:51:14.627640"]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (1.1ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-04-17 07:51:14.633074"], ["last_sign_in_at", "2018-04-17 07:51:14.633074"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["updated_at", "2018-04-17 07:51:14.634306"], ["id", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 231ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:51:14 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 43ms (Views: 37.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-04-17 15:51:17 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"q8YlVyCaF3ifiMWtmxQ8UH4bj1j4NzENCfNSN2iyyg9yWbVvwof8m6K74O1r+x7nvUpyxZ7UgPt3RyfFegjtMA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:51:17 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  Rendered songs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 70ms (Views: 66.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 15:51:18 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 15:51:24 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JEOX44rgV0fSyfMOxCQ6ry/unqA0t/a0c4HmvsCTaUH6LEBpgLzOSX+vL+knqs4lPZRFjEqpN6XBQRZtEgHzNA==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2018-04-17 07:51:24.249159"], ["sign_in_count", 2], ["updated_at", "2018-04-17 07:51:24.250877"], ["id", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 216ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 15:51:24 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 15:51:25 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 91ms (Views: 53.3ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 15:51:34 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dOiw3a/nSmAoyGGcNJ3rtmbhuv7+iWwEx3sz3f4x+aSBGAFT9joDQUIfV8bjoEFObFuiDVVnZEz6K2ufbc94Qw==", "song"=>{"title"=>"Single Ladies"}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :title
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[36mSong Create (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("created_at", "updated_at", "user_id") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2018-04-17 07:51:34.760906"], ["updated_at", "2018-04-17 07:51:34.760906"], ["user_id", 1]]
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:33
+Redirected to http://localhost:3000/songs/1
+Completed 302 Found in 36ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/songs/1" for 127.0.0.1 at 2018-04-17 15:51:34 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Song:0x00007fad8c921f80>):
+    1: <p>Song:</p>
+    2: <p>
+    3:   <%= @song.title %>
+    4: </p>
+    5: <%= link_to 'Back', songs_path %>
+  
+app/views/songs/show.html.erb:3:in `_app_views_songs_show_html_erb__2045390575107316777_70191681810840'
+Started GET "/songs/1" for 127.0.0.1 at 2018-04-17 15:52:23 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 32.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 15:52:25 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 52ms (Views: 45.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 15:52:50 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 39ms (Views: 34.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 15:52:51 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 47ms (Views: 37.4ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 15:53:03 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nHGbgF3cVFTfeCnXGvyZnItxKs6HqdrJFwrtJ5U57MdpgSoOBAEddbWvH43NwTNkgcsyPSxH0oEqWrVlBsdtIA==", "song"=>{"name"=>"Teardrops on my Guitar"}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Teardrops on my Guitar"], ["created_at", "2018-04-17 07:53:03.169097"], ["updated_at", "2018-04-17 07:53:03.169097"], ["user_id", 1]]
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/songs_controller.rb:33
+Redirected to http://localhost:3000/songs/2
+Completed 302 Found in 17ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 15:53:03 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 29.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 15:53:08 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 47ms (Views: 39.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 15:54:06 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 30ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-17 15:54:10 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__780598123792662779_70191685552440'
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (1.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "ballad"], ["description", "slow and nice"], ["created_at", "2018-04-17 07:57:54.321478"], ["updated_at", "2018-04-17 07:57:54.321478"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Create (0.8ms)[0m  [1m[32mINSERT INTO "genres" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "country"], ["description", "cowboy style"], ["created_at", "2018-04-17 07:58:34.637669"], ["updated_at", "2018-04-17 07:58:34.637669"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong::HABTM_Genres Create (2.5ms)[0m  [1m[32mINSERT INTO "genres_songs" ("genre_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["genre_id", 1], ["song_id", 1], ["created_at", "2018-04-17 07:59:34.535559"], ["updated_at", "2018-04-17 07:59:34.535559"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres"."id" = "genres_songs"."genre_id" WHERE "genres_songs"."song_id" = $1 LIMIT $2[0m  [["song_id", 1], ["LIMIT", 11]]
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong::HABTM_Genres Create (1.1ms)[0m  [1m[32mINSERT INTO "genres_songs" ("genre_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["genre_id", 1], ["song_id", 2], ["created_at", "2018-04-17 08:00:21.230208"], ["updated_at", "2018-04-17 08:00:21.230208"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres"."id" = "genres_songs"."genre_id" WHERE "genres_songs"."song_id" = $1 LIMIT $2[0m  [["song_id", 2], ["LIMIT", 11]]
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY "genres"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong::HABTM_Genres Create (1.4ms)[0m  [1m[32mINSERT INTO "genres_songs" ("genre_id", "song_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["genre_id", 2], ["song_id", 2], ["created_at", "2018-04-17 08:00:51.433076"], ["updated_at", "2018-04-17 08:00:51.433076"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres"."id" = "genres_songs"."genre_id" WHERE "genres_songs"."song_id" = $1 LIMIT $2[0m  [["song_id", 2], ["LIMIT", 11]]
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 16:01:09 +0800
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 451ms (Views: 413.5ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 16:01:20 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 35.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-17 16:01:23 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 66ms (Views: 46.4ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 16:02:13 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (31.1ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"genres", :id=>"2"}, missing required keys: [:song_id]):
+    3:   <%= @song.name %>
+    4: </p>
+    5: <%= link_to 'Back', songs_path %>
+    6: <%= link_to 'See Genres for song', song_genres_path %>
+  
+app/views/songs/show.html.erb:6:in `_app_views_songs_show_html_erb___1873758349237638175_70304285678460'
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 16:02:49 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 16:03:05 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-17 16:03:07 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 41ms (Views: 34.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 16:03:08 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 62ms (Views: 52.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 16:03:21 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 48ms (Views: 38.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 16:04:22 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/show.html.erb:6: syntax error, unexpected ':', expecting ')'
+... link_to 'See Genres', /songs/:song_id/genres );
+...                               ^):
+  
+app/views/songs/show.html.erb:6: syntax error, unexpected ':', expecting ')'
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 16:05:00 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 31ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 16:06:28 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (345.6ms)
+Completed 500 Internal Server Error in 361ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `song_id' for #<#<Class:0x00007fe1faac6500>:0x00007fe200a83218>
+Did you mean?  song_url):
+    3:   <%= @song.name %>
+    4: </p>
+    5: <%= link_to 'Back', songs_path %>
+    6: <a href="/<%=song_id=%>">Mission Page</a>
+  
+app/views/songs/show.html.erb:6:in `_app_views_songs_show_html_erb___1873758349237638175_70304325180920'
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-17 16:07:15 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 45.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 16:07:17 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 87ms (Views: 75.0ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-04-17 16:07:20 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TtnbgZm0fIdMlNgnAeeP7cNzbPYjIZhXpW/crBDaiN3PAnsHK5wloYOjvp/m21d+JErTIy7nN85Ct7aQYomHGw=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 16:07:20 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  Rendered songs/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 57ms (Views: 49.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 21:10:43 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (7.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  Rendered songs/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 152ms (Views: 129.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 21:10:50 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  Rendered songs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 55ms (Views: 49.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/json" for 127.0.0.1 at 2018-04-17 21:10:54 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/json"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 21:16:16 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 94ms (Views: 61.2ms | ActiveRecord: 13.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 21:16:21 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfYhXAcTbKnbOLH9w7pPKyxyx2nLTKEGHtBunXd2NxtFXze6Uh/HQ3yTAI6Q/sgdCSNKW44SujkT1Zrp8wDF8w==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (3.3ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-04-17 13:16:21.603153"], ["last_sign_in_at", "2018-04-17 07:51:24.249159"], ["sign_in_count", 3], ["updated_at", "2018-04-17 13:16:21.605763"], ["id", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 247ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 21:16:21 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 63ms (Views: 41.9ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:16:23 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 64ms (Views: 54.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:16:24 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4U5jYYs19cdDDb3eRKU+jeGmltbYpxGhrKJFw/vaTQz8TGRU43O01pszQAyX4h+10SmjimyGQATXPH9CHFRsbA==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `validates' for #<SongsController:0x00007fe2012f80b0>):
+  
+app/controllers/songs_controller.rb:29:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:18:31 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BEgFOPtALSydvf4keLKa27vDkXvihOewJ7AO/G1//r2ylNR6wH5oXVA6eR6MAYl+IaZ7Q9mJN1P4jAFiXvMeuA==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `validates' for #<SongsController:0x00007fe1ff8316f0>):
+  
+app/controllers/songs_controller.rb:29:in `create'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:19:54 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 87ms (Views: 33.7ms | ActiveRecord: 15.2ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:20:01 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nx5DT2IlBWCvITQD8bOgaUmh5NgfQuWBCi9TayF++egpwpINWRtAEWKmszkFALPM08QO4CRPNWLVE1z1EvIZ7Q==", "song"=>{"name"=>"sdfdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsd"}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 29.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:20:03 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P2nFL39Gllf4ia85x4elO5DwJMMQt3p7vceRXx3kwruJtRRtRHjTJjUOKAMzNLaeCpXO+yu6qphi+57BLmgivg==", "song"=>{"name"=>"sdfdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsd"}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 32.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:20:11 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GVUlkt7fqWQChFA4u+bD56IVF6bh9gSlHFh6OUUBO+mvifTQ5eHsFc8D1wJPVdBCOHD9ntr71EbDZHWndo3b7A==", "song"=>{"name"=>"sdfdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsd"}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 42ms (Views: 34.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:20:26 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MTq6rFmcln3qM7ZWiZTR8FUht2fld3R3OLmdjfp3pveH5mvuYqLTDCe0MWx9J8JVz0RdX956pJTnhZITyftG8g==", "song"=>{"name"=>"a"}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 42ms (Views: 34.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 21:22:12 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 98ms (Views: 63.7ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:22:13 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    11:   </p>
+    12: <% end %>
+    13: <p class="error">
+    14:   <%= show_errors(@user, :name) %>
+    15: </p>
+    16: 
+    17: <%= link_to 'Back', songs_path %>
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:14:in `_app_views_songs_new_html_erb__2565192382001725219_70304328330460'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:23:11 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    10:     <%= form.submit %>
+    11:   </p>
+    12:   <p class="error">
+    13:   <%= show_errors(@user, :name) %>
+    14: </p>
+    15: <% end %>
+    16: 
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:13:in `block in _app_views_songs_new_html_erb__2565192382001725219_70304281519280'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2565192382001725219_70304281519280'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:24:41 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    12: <% end %>
+    13: 
+    14: 
+    15: <% if @songs.errors.any? %>
+    16: <p class="error">
+    17:   <%= show_errors(@user, :name) %>
+    18: </p>
+  
+app/views/songs/new.html.erb:15:in `_app_views_songs_new_html_erb__2565192382001725219_70304270765160'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:25:26 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 48ms (Views: 42.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:25:29 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ziDrknR6nshmFPfarcyzu6vJ96IjKw6UhtQuBIa9qvp4/DrQT0TbuauTcOBZf6AeMawdmhgm3ndZ6CGatTFK/w==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    14: 
+    15: <% if @song.errors.any? %>
+    16: <p class="error">
+    17:   <%= show_errors(@user, :name) %>
+    18: </p>
+    19: <% end %>
+    20: 
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:17:in `_app_views_songs_new_html_erb__2565192382001725219_70304325002880'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:32:46 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ziDrknR6nshmFPfarcyzu6vJ96IjKw6UhtQuBIa9qvp4/DrQT0TbuauTcOBZf6AeMawdmhgm3ndZ6CGatTFK/w==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 16.7ms)
+
+
+  
+NameError (undefined local variable or method `errors' for #<Class:0x00007fe1fa997c88>):
+  
+app/models/song.rb:6:in `<class:Song>'
+app/models/song.rb:1:in `<main>'
+app/controllers/songs_controller.rb:29:in `create'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:33:46 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 89ms (Views: 43.0ms | ActiveRecord: 14.3ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:33:47 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tkxysEPJZ+5EpJMRvCAuToR/aZ1K81kGZ7H4TSAW/ikAkKPyePcin4kjFCtIkz3rHhqDpXH+ieW4jffTE5oeLA==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 32.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:33:49 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3e++LPXue7thdeHJCvKdubiwv2JIosRMPxC5xaQvFOVrM29uztA+yqzyZvP+QY4cItVVWnOvFK/gLLZbl6P04A==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:33:49 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fCdA3MJX2GrUHkURammquMafVefbjb8tklZpeJf/MY7K+5Ge+WmdGxmZwiue2rkdXPq/3+CAb85NambmpHPRiw==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 38.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 21:33:58 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:33:59 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 59ms (Views: 47.2ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:34:00 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (174.2ms)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `show_errors' for #<#<Class:0x00007fe203a809e8>:0x00007fe200e72f40>):
+    14: 
+    15: <% if @song.errors.any? %>
+    16: <p class="error">
+    17:   <%= show_errors(@user, :name) %>
+    18: </p>
+    19: <% end %>
+    20: 
+  
+app/views/songs/new.html.erb:17:in `_app_views_songs_new_html_erb__2565192382001725219_70304327240880'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:35:52 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 15.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    14: 
+    15: <% if @song.errors.any? %>
+    16: <p class="error">
+    17:   <%= show_errors(@user, :name) %>
+    18: </p>
+    19: <% end %>
+    20: 
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:17:in `_app_views_songs_new_html_erb__2565192382001725219_70304278656480'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:39:19 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+	<p class="error">
+	        ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+	  <%= show_errors(@user, :name) );@output_buffer.safe_append='
+	   ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:26: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:28: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+app/views/songs/new.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+app/views/songs/new.html.erb:26: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:28: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:39:55 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+	<p class="error">
+	        ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+	  <%= show_errors(@user, :name) );@output_buffer.safe_append='
+	   ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/songs_controller.rb:35:in `create'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:40:21 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.2ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+	<p class="error">
+	        ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+	  <%= show_errors(@user, :name) );@output_buffer.safe_append='
+	   ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:40:58 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+	<p class='error'>
+	        ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+	  <%= show_errors(@user, :name) );@output_buffer.safe_append='
+	   ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:41:15 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+	<p class="error">
+	        ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+	  <%= show_errors(@user, :name) );@output_buffer.safe_append='
+	   ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:41:55 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 16.2ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+                           ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:36: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+app/views/songs/new.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+app/views/songs/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:36: syntax error, unexpected keyword_end, expecting ')'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:42:46 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+                           ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:36: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+app/views/songs/new.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+app/views/songs/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:36: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:42:51 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+                           ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:36: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+app/views/songs/new.html.erb:26: syntax error, unexpected keyword_end, expecting ')'
+app/views/songs/new.html.erb:34: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:36: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:47:17 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 8.1ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/models/song.rb:5: syntax error, unexpected '}', expecting =>
+...lidates :name, presence: {true}, length: { minimum: 5, maxim...
+...                               ^):
+  
+app/models/song.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/songs_controller.rb:29:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:47:53 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 17.6ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+             ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+  <% if @song.errors.any? );@output_buffer.safe_append='
+                           ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:26: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:28: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected tIVAR, expecting keyword_end
+app/views/songs/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+app/views/songs/new.html.erb:26: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:28: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:48:22 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+	<p class="error">
+	        ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+	  <%= show_errors(@user, :name) );@output_buffer.safe_append='
+	   ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:53:50 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+	<p class="error">
+	        ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+	  <%= show_errors(@user, :name) );@output_buffer.safe_append='
+	   ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/songs/new.html.erb:5: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/songs/new.html.erb:6: syntax error, unexpected '<'
+app/views/songs/new.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/songs/new.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:55:44 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    3: <%= form_with scope: :song, url: songs_path, local: true do |form| %>
+    4: 
+    5: 	<p class="error">
+    6: 	  <%= show_errors(@user, :name) %>
+    7: 	</p>
+    8: 
+    9:   <p>
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:6:in `block in _app_views_songs_new_html_erb__2565192382001725219_70304347224100'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2565192382001725219_70304347224100'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 21:59:39 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i57oDyFklQs2bNCayjT4fS20HgV6IfqHXyh6dRv1y/2WnO86SSLUGu5SLUgZc9lFHTsrWc4AqyIktkD0/HvqnQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 14.7ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/songs/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/songs/new.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/songs_controller.rb:35:in `create'
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 21:59:45 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 21:59:47 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/songs/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/songs/new.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:00:39 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/songs/new.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/songs/new.html.erb:29: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/songs/new.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:01:16 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `error' for #<Song:0x00007fe1fb727268>
+Did you mean?  errors):
+    2: 
+    3: <%= form_with scope: :song, url: songs_path, local: true do |form| %>
+    4: 
+    5: 	<% if @song.error.any? %>
+    6: 		<h2>Errors:</h2>
+    7: 		<ul>
+    8: 			<% @song.errors.full.messages.each do |msg| %>
+  
+app/views/songs/new.html.erb:5:in `block in _app_views_songs_new_html_erb__2565192382001725219_70304316641920'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2565192382001725219_70304316641920'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:01:26 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:01:28 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9AEZBvRarNEfDIWAC0FAKyZ2mlmx5MZeM3O2gyMK0qhC3chEz2TpoNKLArr/8lOOvBNwYYrpFr3sT7kdEIYyrQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `full' for #<ActiveModel::Errors:0x00007fe20303d468>):
+     5: 	<% if @song.errors.any? %>
+     6: 		<h2>Errors:</h2>
+     7: 		<ul>
+     8: 			<% @song.errors.full.messages.each do |msg| %>
+     9: 			<li><%= msg %></li>
+    10: 			<% end %>
+    11: 		</ul>
+  
+app/views/songs/new.html.erb:8:in `block in _app_views_songs_new_html_erb__2565192382001725219_70304326714220'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2565192382001725219_70304326714220'
+app/controllers/songs_controller.rb:35:in `create'
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:02:13 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9AEZBvRarNEfDIWAC0FAKyZ2mlmx5MZeM3O2gyMK0qhC3chEz2TpoNKLArr/8lOOvBNwYYrpFr3sT7kdEIYyrQ==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 40ms (Views: 31.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:02:17 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mJnks7sDzVkEgxrGkodq/M3PImpIPLHwUfEVPaC6ht4uRTXxgD2IKMkEnfxmNHlZV6rIUnMxYROOzRqjkzZm2w==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 41ms (Views: 30.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 22:06:16 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 71ms (Views: 49.8ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:06:17 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    12: 	<% end %> -->
+    13:  	
+    14:  	<p class="error">
+    15:   		<%= show_errors(@user, :name) %>
+    16: 	</p>
+    17: 	
+    18: 	<p>
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:15:in `block in _app_views_songs_new_html_erb__2565192382001725219_70304328335080'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2565192382001725219_70304328335080'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:06:33 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 13.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    12: 	<% end %> -->
+    13:  	
+    14:  	<p class="error">
+    15:   		<%= show_errors(@user, :name) %>
+    16: 	</p>
+    17: 	
+    18: 	<p>
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:15:in `block in _app_views_songs_new_html_erb__2565192382001725219_70304344963240'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2565192382001725219_70304344963240'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:07:25 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 17.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+     5: 
+     6:  	
+     7:  	<p class="error">
+     8:   		<%= show_errors(@user, :name) %>
+     9: 	</p>
+    10: 
+    11: 	<p>
+  
+app/helpers/application_helper.rb:3:in `show_errors'
+app/views/songs/new.html.erb:8:in `block in _app_views_songs_new_html_erb__2565192382001725219_70304318416760'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb__2565192382001725219_70304318416760'
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:07:43 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 79ms (Views: 29.8ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:07:44 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TAgh60xICBbqVPcwBH6+/74Q913tAsxfPcM9DmTlrOT61PCpd3ZNZyfTcArwza1aJHUdZdYPHLzi/zKQV2lM4Q==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:33
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 49ms (Views: 40.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:07:54 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WecByOQfXsCvgHlIenu4DCFwwc4WwVZTk+olzbg3D/jvO9CK3yEbsWIH/nKOyKupuxUr9i3MhrBM1ipTi7vv/Q==", "song"=>{"name"=>"sdfdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsd"}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:33
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 38ms (Views: 30.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 22:10:20 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:10:21 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 35.0ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:10:22 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"osAdOn2MB9ukwG2k6ydc98M6DAIL4whW49TYXYZUg2q/whoPFcpGynz+kHY4YH3P87U5Xr/CWfOYSuLcYdqiCg==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:33
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 30.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 22:11:00 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:11:01 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 36.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:11:02 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LKFVMbj3znEB1pN/ta1TQvkYxw2578gy+GX6jsS2VkMxo1IE0LGPYNnobq1m6nJ6yZfyUQ3OmZeD+8APIzh3Iw==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:33
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:33
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 44ms (Views: 37.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 22:55:14 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 88ms (Views: 52.8ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2018-04-17 22:55:16 +0800
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 56ms (Views: 38.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2018-04-17 22:55:17 +0800
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3uQN379qnoJpWpMtMXiMUa7dl9jqoWO6uX2ZIW7QmU7D5grq1yzfk7Fkbv/iP61pnlKihF6AMh/C46OgiV64Lg==", "song"=>{"name"=>""}, "commit"=>"Save Song"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:32
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 31.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2018-04-17 22:55:39 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 47ms (Views: 41.4ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-04-17 22:55:40 +0800
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZcrHv8mw99XNLfCHX2LylworOJUmcFt2baHusCBnQB/TFhb98o6ypACqd72r0eEykE7SrR19i5WyneEuE+ugGg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-17 22:55:40 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  Rendered songs/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 22:55:41 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (22.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 22:55:42 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mtk+iTA2965Rx+W+adBylVfqVafaPRakJgiT1nmAqO9qNXTuxAcdmR2Kbo7W7Q2JI6tJCpEffixcXf01r+ZhvQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mtk+iTA2965Rx+W+adBylVfqVafaPRakJgiT1nmAqO9qNXTuxAcdmR2Kbo7W7Q2JI6tJCpEffixcXf01r+ZhvQ==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 22:55:43 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sHVJlefyrZ3ex83rB/L5m87WjGBm8jJ7yid1D1/NIJaGEV8Zu//B5Q+7wqk9NQNwQbShUiDp47+ierUWeWOIjg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sHVJlefyrZ3ex83rB/L5m87WjGBm8jJ7yid1D1/NIJaGEV8Zu//B5Q+7wqk9NQNwQbShUiDp47+ierUWeWOIjg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 22:55:44 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HDm84KlRkYGzKeSnaaj1ZyP40aaMmrm4JMGCt1He4ZwqXaps9Vz9+WJV6+VTbw+MrJr8lMqBaHxMnEKud3BJhA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HDm84KlRkYGzKeSnaaj1ZyP40aaMmrm4JMGCt1He4ZwqXaps9Vz9+WJV6+VTbw+MrJr8lMqBaHxMnEKud3BJhA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 22:55:45 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yhW8PFHnHNizWiSRJ3BSx4SfdJ++h+oVB164OIaskLz8caqwDepwoGImK9Mdt6gsC/1ZrficO9FvA3ghoAI4pA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yhW8PFHnHNizWiSRJ3BSx4SfdJ++h+oVB164OIaskLz8caqwDepwoGImK9Mdt6gsC/1ZrficO9FvA3ghoAI4pA==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-04-17 22:55:53 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-04-17 22:55:55 +0800
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3P46tJhZzW4Hk9MC11/dH/L6aNSDdjoPrK8GBAfXhhsU26iYMg+BgWmNQTvmy1kbZkwZwEB0/q76FOWMWf8udg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 71ms (Views: 44.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 22:56:01 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 22:56:02 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V0I4GhEIe3+OEPPElXEfvbfboLsnR0nUg5BRrQTBvCkPrnJ95TmRSMJdePQqTGChw5q8FmxlIVz5xT9O0qd1ew==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V0I4GhEIe3+OEPPElXEfvbfboLsnR0nUg5BRrQTBvCkPrnJ95TmRSMJdePQqTGChw5q8FmxlIVz5xT9O0qd1ew==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 23:05:48 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    2: 
+    3: <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   
+    5:     <% if @resource.errors.any? %>
+    6:     <h2>Errors:</h2>
+    7:     <ul>
+    8:       <% @resource.errors.full_messages.each do |msg| %>
+  
+app/views/devise/sessions/new.html.erb:5:in `block in _app_views_devise_sessions_new_html_erb___2300122105824628726_70304330684800'
+app/views/devise/sessions/new.html.erb:3:in `_app_views_devise_sessions_new_html_erb___2300122105824628726_70304330684800'
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 23:06:12 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 23:06:13 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2OYWgeO1Bqy4A1Y26Wswk+iMvH98VQ/dRyih9OEvsxvuggANv7hq1Gl/WXTTrMp4Z+6RTTpO3hkvdWHtx4EbAw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2OYWgeO1Bqy4A1Y26Wswk+iMvH98VQ/dRyih9OEvsxvuggANv7hq1Gl/WXTTrMp4Z+6RTTpO3hkvdWHtx4EbAw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-17 23:06:29 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-17 23:09:11 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nI7em/RJaZEtcQqjwCFtC4Fpgr1QScYUWfPZaM4jGw2q6sgXqEQF6fwNBeH65pfgDguvjxZSF9Axrhlx6I2zFQ==", "user"=>{"email"=>"ml@m", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ml@m"], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 3.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nI7em/RJaZEtcQqjwCFtC4Fpgr1QScYUWfPZaM4jGw2q6sgXqEQF6fwNBeH65pfgDguvjxZSF9Axrhlx6I2zFQ==", "user"=>{"email"=>"ml@m", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 206ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
