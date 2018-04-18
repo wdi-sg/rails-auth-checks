@@ -1,4 +1,4 @@
-<h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+<h1>Genres for song (<%= @song.name %>)</h1>
 <% @genres.each do |genre| %>
 <li><%= genre.name %></li>
 <% end %>

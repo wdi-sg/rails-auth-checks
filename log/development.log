@@ -2697,3 +2697,609 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 206ms (Views: 39.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-18 07:09:31 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 101ms (Views: 48.6ms | ActiveRecord: 28.2ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-04-18 07:09:40 +0800
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PVt7bPYAWVXUAwwb9dR3HudnVUlkqRJMjuZZfmmxoncLP23gqg01LQV/A1nPE431aAV4eyKyw4jmu5lnTx8Kbw==", "user"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2018-04-17 23:09:40.754673"], ["last_sign_in_at", "2018-04-17 13:16:21.603153"], ["sign_in_count", 4], ["updated_at", "2018-04-17 23:09:40.756327"], ["id", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 212ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-18 07:09:40 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 64ms (Views: 46.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/songs/2" for 127.0.0.1 at 2018-04-18 07:09:49 +0800
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:13
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 54ms (Views: 46.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:09:49 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__2454390307911485300_70304285889000'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:10:51 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant GenresController::Songs):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:11:31 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+  
+app/controllers/genres_controller.rb:6:in `index'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:15:29 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::ConfigurationError (Can't join 'Song' to association named 'genres_song'; perhaps you misspelled it?):
+  
+app/controllers/genres_controller.rb:6:in `index'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:16:41 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Song::GenresSong):
+  
+app/controllers/genres_controller.rb:6:in `index'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:17:10 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Song::GenresSong):
+  
+app/controllers/genres_controller.rb:6:in `index'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:18:04 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Song::GenresSong):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__2454390307911485300_70304345961400'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:18:32 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__2454390307911485300_70304345002800'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:18:40 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Song::GenresSong):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__2454390307911485300_70304316005360'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:19:31 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 55ms (Views: 42.5ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:19:47 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 34ms (Views: 29.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:20:00 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Song::GenresSong):
+    1: <h1>Genres for song (<%= @song[0] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__2454390307911485300_70304325676080'
+Started GET "/" for 127.0.0.1 at 2018-04-18 07:20:11 +0800
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/songs/index.html.erb:8
+  Rendered songs/index.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 85ms (Views: 66.0ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-18 07:20:15 +0800
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:20:23 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:21:27 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Song::GenresSong):
+    1: <h1>Genres for song (<%= @song.inspect %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__2454390307911485300_70304350274720'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:21:44 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Song::GenresSong):
+  
+app/controllers/genres_controller.rb:5:in `index'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:22:09 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 67ms (Views: 42.9ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:22:26 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 36ms (Views: 31.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:22:58 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Genres for song (<%= @song %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+    5: <%= link_to 'Back', songs_path %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb__2454390307911485300_70304326409140'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:23:24 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:23:39 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 95ms (Views: 67.6ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:24:21 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (37.0ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Song::GenresSong):
+    1: <h1>Genres for song (<%= debug(@song) %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__2454390307911485300_70304349689020'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:26:05 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:3
+  Rendered genres/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:26:38 +0800
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (2.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:3
+  Rendered genres/index.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 515ms (Views: 480.2ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:29:15 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/wenhao/wdi/week8/rails-auth-checks/app/views/genres/index.html.erb:5: syntax error, unexpected '<', expecting keyword_end
+'.freeze; <% end 
+           ^
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/genres/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/wenhao/wdi/week8/rails-auth-checks/app/views/genres/index.html.erb:14: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/genres/index.html.erb:5: syntax error, unexpected '<', expecting keyword_end
+app/views/genres/index.html.erb:12: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/genres/index.html.erb:14: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:29:25 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (16.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant Song::GenresSong):
+    1: <h1>Genres for song (<%= @song %>)</h1>
+    2: 
+    3: <% @song.each do |song| %>
+    4: <li><%= song %></li>
+    5: <% end %>
+    6: 
+  
+app/views/genres/index.html.erb:3:in `_app_views_genres_index_html_erb___2548212509826302910_70153306879680'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:29:58 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>Genres for song (<%= @song %>)</h1>
+    2: 
+    3: <% @song.each do |song| %>
+    4: <li><%= song %></li>
+    5: <% end %>
+    6: 
+  
+app/views/genres/index.html.erb:3:in `_app_views_genres_index_html_erb___2548212509826302910_70153269254120'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 07:33:00 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 57ms (Views: 35.4ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:41:04 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+    5: <%= link_to 'Back', songs_path %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb___2548212509826302910_70153334556240'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:43:49 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 98ms (Views: 61.1ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:44:08 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+    5: <%= link_to 'Back', songs_path %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb___2548212509826302910_70153331200420'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:45:19 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___2548212509826302910_70153330924200'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:45:29 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 87ms (Views: 53.9ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:46:33 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+    5: <%= link_to 'Back', songs_path %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb___2548212509826302910_70153278173620'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:46:57 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <!-- <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %> -->
+    5: <%= link_to 'Back', songs_path %>
+  
+app/views/genres/index.html.erb:2:in `_app_views_genres_index_html_erb___2548212509826302910_70153269840040'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:47:04 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT name FROM songs INNER JOIN genres_songs on songs.id = genres_songs.song_id WHERE songs.id=2[0m
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:47:43 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Song' to association named 'genres_songs'; perhaps you misspelled it?):
+    1: <h1>Genres for song (<%= @song[0]["name"] %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb___2548212509826302910_70153331203500'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:47:54 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 60ms (Views: 46.5ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:48:08 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:48:31 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:51:17 +0800
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/wenhao/.rbenv/versions/2.3.5/lib/ruby/gems/2.3.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  Rendered genres/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 10.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Genres for song (<%= @song[0].name %>)</h1>
+    2: <% @genres.each do |genre| %>
+    3: <li><%= genre.name %></li>
+    4: <% end %>
+  
+app/views/genres/index.html.erb:1:in `_app_views_genres_index_html_erb__3053106423820055108_70235778292720'
+Started GET "/songs/2/genres" for 127.0.0.1 at 2018-04-18 08:51:57 +0800
+Processing by GenresController#index as HTML
+  Parameters: {"song_id"=>"2"}
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:5
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (2.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_songs" ON "genres_songs"."genre_id" = "genres"."id" WHERE (genres_songs.song_id in ('2'))[0m
+  ↳ app/views/genres/index.html.erb:2
+  Rendered genres/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 302ms (Views: 253.8ms | ActiveRecord: 16.4ms)
+
+
