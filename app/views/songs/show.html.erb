@@ -1,0 +1,13 @@
+<h1>Song</h1>
+
+<p>Title: <%= @song.title%></p>
+<p>Genre: <%= @song.genre.name%></p>
+<%= @song.hotlists.each do |song| %>
+    <p>Hotlist # <%= song.week %></p>
+<% end %>
+
+<% if user_signed_in? %>
+<%= link_to 'New Song', new_song_path %>
+<% end %>
+
+<%= link_to 'Back', genres_path %>

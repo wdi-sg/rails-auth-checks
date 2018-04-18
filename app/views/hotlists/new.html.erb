@@ -1,0 +1,12 @@
+<%= form_with scope: :hotlist, url: hotlists_path, local: true do |form| %>
+
+<%= form.collection_check_boxes :song_ids, @song, :id, :title %>
+  <p>
+    <%= form.label :week %><br>
+    <%= form.text_field :week %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

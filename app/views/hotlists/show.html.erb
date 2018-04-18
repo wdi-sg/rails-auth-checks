@@ -1,0 +1,6 @@
+<p>Week #: <%= @hotlist.week%></p>
+<%= @hotlist.songs.each do |song| %>
+    <ul>
+        <li>Song: <%= song.title %></li>
+    </ul>
+<% end %>
