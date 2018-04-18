@@ -1,0 +1,22 @@
+<p>Create New Song</p>
+
+<%= form_with scope: :song, url: songs_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <% if !@user.nil? %>
+    <%= hidden_field(:user, :id) %>
+  <% end %>
+  <% if !@song.nil? %>
+    <p class="error">
+      <%= show_errors(@song, :name)%>
+    </p>
+  <% end %>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to all songs', songs_path %>
