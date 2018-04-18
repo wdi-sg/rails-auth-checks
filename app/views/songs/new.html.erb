@@ -13,3 +13,12 @@
 
 <% end %>
 
+<h5>
+  My Songs:
+</h5>
+<ul>
+  <% @user.songs.each do |song| %>
+    <li><%=song.name%></li>
+  <%end%>
+</ul>
+

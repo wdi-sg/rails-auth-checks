@@ -9,6 +9,7 @@ class SongsController < ApplicationController
 	end
 
 	def new
+		@user = User.find_by(id: current_user.id)
 		@song = Song.new
 		render :new
 	end
@@ -25,7 +26,7 @@ class SongsController < ApplicationController
 
 	private
 	def song_params
-		params.require(:song).permit(:name, :text)
+		params.require(:song).permit(:name, :text).merge(user_id: current_user.id)
 	end
 
 end
