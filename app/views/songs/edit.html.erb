@@ -1,0 +1,14 @@
+<div class = container>
+
+<h1>Update Song</h1>
+<%= form_for @song do |f| %>
+  <%= f.label("Name:")%>
+  <%= f.text_field :name %>
+  <%= f.label("Genre:")%>
+  <%= f.collection_check_boxes :genre_ids, @genres, :id, :name %>
+  <%= f.submit("Update", class: "btn btn-primary") %>
+<% end %>
+
+<p><%= button_to "Delete Song", song_path(@song), data: { confirm: "Are you sure?" },method: :delete, :class => "btn btn-danger" %></p>
+
+</div>
