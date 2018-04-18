@@ -1,20 +1,26 @@
 <div class="container">
   <h1>Songs</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-      </tr>
-    </thead>
-    <tbody>
+  <p>Click on song title to edit</p>
+  <div class="table-responsive-sm">
+    <table class="table table-sm">
+      <thead>
+        <tr class="d-flex">
+          <th class="col-4">Title
+            <%= link_to new_song_path, class: "btn-sm btn-success float-right" do %>Add new songs<% end %>
+          </th>
+        </tr>
+      </thead>
+    <tbody class="col-4">
       <% @songs.order(:name).each do |song| %>
-        <tr>
-          <td>
-            <%= link_to edit_song_path(song) do%><%= song.name %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tr class="d-flex">
+          <td class="col-4">
+            <%= link_to edit_song_path(song) do%>
+              <%= song.name %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
