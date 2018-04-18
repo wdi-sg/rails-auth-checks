@@ -1,0 +1,24 @@
+<%= form_with scope: :song, url: songs_path, local: true do |form| %>
+<p>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+<p class="error">
+  <%= show_errors(@song, :name) %>
+</p>
+
+<% end %>
+
+<h5>
+  My Songs:
+</h5>
+<ul>
+  <% @user.songs.each do |song| %>
+    <li><%=song.name%></li>
+  <%end%>
+</ul>
+
