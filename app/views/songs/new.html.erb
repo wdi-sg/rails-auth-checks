@@ -1,0 +1,22 @@
+<%= form_with scope: :song, url: songs_path, local: true do |form| %>
+
+<p>Hot List Week #</p>
+<%= form.collection_check_boxes :hotlist_ids, @hotlist, :id, :week %>
+    <p>
+        <%= form.label :title %><br>
+        <%= form.text_area :title %>
+    </p>
+
+    <p class="error">
+        <%= show_errors(@song, :title) %>
+    </p>
+
+    <p>
+        <%= form.label :genre%><br>
+        <%= form.collection_select :genre_id, @genre, :id, :name %>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>

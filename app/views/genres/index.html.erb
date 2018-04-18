@@ -1,0 +1,26 @@
+<h1>Welcome to Sortify</h1>
+
+<%= link_to 'New Genre', new_genre_path %>
+<%= link_to 'New Song', new_song_path %>
+<br>
+<br>
+
+<table border=solid>
+  <tr>
+    <th>No</th>
+    <th>Genre</th>
+    <th>Description</th>
+  </tr>
+
+  <% @genres.each do |genre| %>
+    <tr>
+      <td><%= genre.id %></td>
+      <td><%= genre.name %></td>
+      <td><%= genre.description %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% if user_signed_in? %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+<% end %>
