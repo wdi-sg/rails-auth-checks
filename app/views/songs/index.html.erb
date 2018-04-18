@@ -1,7 +1,7 @@
 <p>songs</p>
 <ul>
 <% @songs.each do |song| %>
-  <li><%= song.name %></li>
+  <li><%= song.name %>(<%= song.year %>)</li>
 <% end %>
 </ul>
 
