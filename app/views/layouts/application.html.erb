@@ -16,22 +16,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <% unless user_signed_in? %>
           <li class="nav-item">
             <%= link_to new_user_registration_path, class: "nav-link" do %>Sign up<% end %>
           </li>
           <li class="nav-item">
             <%= link_to new_user_session_path, class: "nav-link" do %>Log In<% end %>
           </li>
+          <% else %>
           <li class="nav-item">
             <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do %>Log Out<% end %>
           </li>
+          <% end %>
         </ul>
       </div>
     </nav>
-<div class="container">
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-</div>
-<%= yield %>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
 </body>
 </html>
