@@ -1,0 +1,12 @@
+<h1><% if !@genre.nil? %> <%= @genre.name %> <% end %> Songs</h1>
+<ul>
+  <% @songs.each do |s| %>
+    <li><%= link_to s.name, song_path(s) %></li>
+  <% end %>
+</ul>
+<% if user_signed_in? %>
+<%= link_to 'New Song', new_song_path %>
+<% else %>
+<%= link_to 'Sign In', new_user_session_path %> <br>
+<%= link_to 'Register', new_user_registration_path %>
+<% end %>
